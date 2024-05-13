@@ -10,11 +10,26 @@ public class Quiz1 {
 
 		System.out.println(number1.max(19, 20));
 
-//		Q. 익명 클래스 사용
+//		Q. 익명 클래스 사용 max() 호출하세요
+		MyNumber number2 = new MyNumber() {
+//			(추상메소드를 오버라이드 해주세요)
+			@Override
+			public int max(int x, int y) {
+				return x > y? x : y;    //꼭 삼항연산자 아니어도 됩니다.
+				
+//				int max = x > y? x : y;
+//				return max;			 
+			}
+		};
+		System.out.println(number2.max(10,30));
+			
 		
-		
-//		Q. 람다식 함수 사용
-		
+//		Q. 람다식 함수 사용 max() 호출하세요
+		MyNumber number3 = (x, y)->  {
+			int max =  x > y? x: y;
+			return max;
+		};
+		System.out.println(number3.max(20, 10));
 		
 	}
 
